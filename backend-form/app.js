@@ -36,8 +36,8 @@ const midleware = async (req, res, next) => {
 };
 
 app.use(apiV1("/user"), require("./routes/user.route"));
+app.use(apiV1("/pendaftaran"), require("./routes/pendaftaran.route"));
 app.use(apiV1("/dosen"), midleware, require("./routes/dosen.route"));
-app.use(apiV1("/pendaftaran"), midleware, require("./routes/pendaftaran.route"));
 app.use(apiV1("/mahasiswa"), midleware, require("./routes/mahasiswa.route"));
 app.use(apiV1("/jenis-kegiatan"), midleware, require("./routes/jenis_kegiatan.route"));
 app.use(apiV1("/program-studi"), midleware, require("./routes/program_studi.route"));

@@ -49,6 +49,11 @@ const PendaftaranSchema = new Schema({
     type: Schema.Types.ObjectId,
     ref: "mahasiswa",
   },
+  status: {
+    type: String,
+    enum: ["Setujui", "Tidak Setujui"],
+    default: "Tidak Setujui"
+  },
   dosen_pembimbing_1: { type: Schema.Types.ObjectId, ref: "dosen", default: '' },
   dosen_pembimbing_2: { type: Schema.Types.ObjectId, ref: "dosen", default: '' },
   dosen_penguji_1: { type: Schema.Types.ObjectId, ref: "dosen", default: '' },

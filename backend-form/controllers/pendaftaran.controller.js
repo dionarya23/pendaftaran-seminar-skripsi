@@ -48,4 +48,24 @@ module.exports = {
       });
     }
   },
+
+  async updatePendaftaran(req, res) {
+    try {
+      const newPendaftaran = await PendaftaranModel.updateOne(
+        { _id: req.params._id },
+        { status: req.body.status }
+      );
+      res.status(HttpStatus.OK).json({
+        status: HttpStatus.OK,
+        message: "sucess",
+        data: newPendaftaran,
+      });
+    } catch (err) {
+      console.log("error at updatePendaftaran pendaftaran controller : ", err);
+      res.status(HttpStatus.INTERNAL_SERVER_ERROR).json({
+        status: HttpStatus.INTERNAL_SERVER_ERROR,
+        message: "error",
+      });
+    }
+  },
 };

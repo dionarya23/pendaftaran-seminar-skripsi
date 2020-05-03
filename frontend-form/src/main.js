@@ -3,7 +3,13 @@
 import Vue from "vue";
 import App from "./App";
 import router from "./router";
+import VueSweetalert2 from "vue-sweetalert2";
+import VueResource from "vue-resource";
 
+Vue.use(VueSweetalert2);
+Vue.use(VueResource);
+
+Vue.http.options.root = "http://localhost:3000/api/v1/";
 Vue.config.productionTip = false;
 
 /* eslint-disable no-new */
@@ -11,5 +17,5 @@ new Vue({
   el: "#app",
   router,
   components: { App },
-  template: "<App/>",
+  template: "<App/>"
 });

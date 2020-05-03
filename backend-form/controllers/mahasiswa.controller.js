@@ -19,7 +19,7 @@ module.exports = {
     }
   },
 
-  createMahasiswa(req, res) {
+  async createMahasiswa(req, res) {
     try {
 
         const mahasiswa = await MahasiswaModel.create(req.body)

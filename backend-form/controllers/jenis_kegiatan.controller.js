@@ -19,7 +19,7 @@ module.exports = {
     }
   },
 
-  createKegiatan(req, res) {
+  async createKegiatan(req, res) {
     try {
 
         const jenis_kegiatan = await JenisKegiatan.create(req.body)

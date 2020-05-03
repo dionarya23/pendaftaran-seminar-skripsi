@@ -19,7 +19,7 @@ module.exports = {
     }
   },
 
-  createProgramStudi(req, res) {
+  async createProgramStudi(req, res) {
     try {
 
         const programStudi = await ProgramStudi.create(req.body)

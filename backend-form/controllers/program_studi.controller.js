@@ -4,7 +4,7 @@ const HttpStatus = require("http-status-codes");
 module.exports = {
   async getProgramStudi(req, res) {
     try {
-      const program_studi = await ProgramStudi.find({});
+      const program_studi = await ProgramStudi.find().populate("dosens");
       res.status(HttpStatus.OK).json({
         status: HttpStatus.OK,
         message: "success",

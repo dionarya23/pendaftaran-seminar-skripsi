@@ -1,11 +1,17 @@
 const PendaftaranModel = require("../models/pendaftaran.mode");
 const HttpStatus = require("http-status-codes");
-const cloudinary = require("../config/cloudinary");
+var mongoose = require("mongoose");
 
 module.exports = {
   async getPendaftaran(req, res) {
     try {
-      const pendaftaran = await PendafataranModel.find({});
+      const pendaftaran = await PendaftaranModel.find().populate([
+        "dosen_pembimbing_1",
+        "mahasiswa",
+        "dosen_pembimbing_2",
+        "dosen_penguji_1",
+        "dosen_penguji_2"
+      ]);
       res.status(HttpStatus.OK).json({
         status: HttpStatus.OK,
         message: "success",
@@ -22,24 +28,25 @@ module.exports = {
 
   async createPendaftaran(req, res) {
     try {
-      if (req.files.subtitle.type === "application/pdf") {
-        const resultCloudinary = await cloudinary.v2.uploader.upload(
-          req.files.subtitle.path,
-          { resource_type: "auto" }
-        );
-        req.body.syarat = resultCloudinary.secure_url;
-        const pendaftaran = await PendafataranModel.create(req.body);
-        res.status(HttpStatus.CREATED).json({
-          status: HttpStatus.CREATED,
-          message: "sucess",
-          data: pendaftaran,
-        });
-      } else {
-        res.status(HttpStatus.OK).json({
-          status: HttpStatus.OK,
-          message: "file must pdf",
-        });
-      }
+      // if (req.files.subtitle.type === "application/pdf") {
+      // const resultCloudinary = await cloudinary.v2.uploader.upload(
+      //   req.files.subtitle.path,
+      //   { resource_type: "auto" }
+      // );
+      // req.body.syarat = resultCloudinary.secure_url;
+      // console.log("req : ", mongoose.Types.ObjectId.isValid(req.body.dosen_pembimbing_1))
+      const pendaftaran = await PendaftaranModel.create(req.body);
+      res.status(HttpStatus.CREATED).json({
+        status: HttpStatus.CREATED,
+        message: "sucess",
+        data: pendaftaran,
+      });
+      // } else {
+      //   res.status(HttpStatus.OK).json({
+      //     status: HttpStatus.OK,
+      //     message: "file must pdf",
+      //   });
+      // }
     } catch (err) {
       console.log("error at createPendaftaran pendaftaran controller : ", err);
       res.status(HttpStatus.INTERNAL_SERVER_ERROR).json({

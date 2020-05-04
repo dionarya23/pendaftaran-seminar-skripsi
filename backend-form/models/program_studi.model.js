@@ -16,7 +16,7 @@ const ProgramStudiSchema = new Schema({
       unique: true,
     },
   },
-  dosen: [{ type: Schema.Types.ObjectId, ref: "dosen" }],
+  dosens: [{ type: Schema.Types.ObjectId, ref: "dosen" }],
 });
 
 const ProgramStudiModel = model("program_studi", ProgramStudiSchema);

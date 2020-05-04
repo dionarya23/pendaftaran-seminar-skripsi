@@ -4,14 +4,18 @@ const DosenModel = require("../models/dosen.model");
 module.exports = {
   async getDosen(req, res) {
     try {
-      const ProgramStudi = await ProgramStudiModel.findById(
-        req.params.id_jurusan
-      ).populated("dosen");
+      // const ProgramStudi = await ProgramStudiModel.findById(
+      //   req.params.id_jurusan
+      // ).populated("dosen");
+
+      const dosen = await DosenModel.find({
+        program_studi: req.params.id_jurusan,
+      }).populate("program_studi");
 
       res.status(HttpStatus.OK).json({
         status: HttpStatus.OK,
         message: "sucess",
-        data: ProgramStudi.dosen,
+        data: dosen,
       });
     } catch (err) {
       console.log("Eror at get Dosen DosenController : ", err);
@@ -24,7 +28,7 @@ module.exports = {
 
   async getAllDosen(req, res) {
     try {
-      const dosens = await DosenModel.find({}).populate('program_studi');
+      const dosens = await DosenModel.find({}).populate("program_studi");
 
       res.status(HttpStatus.OK).json({
         status: HttpStatus.OK,

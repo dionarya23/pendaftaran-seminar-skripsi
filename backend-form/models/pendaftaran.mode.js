@@ -18,15 +18,14 @@ const PendaftaranSchema = new Schema({
   },
   jenis_seminar: {
     type: String,
-    enum: [null, "Seminar Proposal", "Seminar Hasil"],
-    default: null,
+    enum: ["", null, "Seminar Proposal", "Seminar Hasil"]
   },
   judul: {
     type: String,
     required: true,
   },
   tgl_pelaksanaan: {
-    type: Date,
+    type: String,
     required: true,
   },
   jam: {
@@ -38,8 +37,8 @@ const PendaftaranSchema = new Schema({
     required: true,
   },
   jenis_kegiatan: {
-    type: Schema.Types.ObjectId,
-    ref: "jenis_kegiatan",
+    type: String,
+    enum: ["Seminar", "Ujian Pkl", "Ujian Skripsi/Artikel Ilmiah"],
   },
   program_studi: {
     type: Schema.Types.ObjectId,
@@ -52,12 +51,18 @@ const PendaftaranSchema = new Schema({
   status: {
     type: String,
     enum: ["Setujui", "Tidak Setujui"],
-    default: "Tidak Setujui"
+    default: "Tidak Setujui",
   },
-  dosen_pembimbing_1: { type: Schema.Types.ObjectId, ref: "dosen", default: '' },
-  dosen_pembimbing_2: { type: Schema.Types.ObjectId, ref: "dosen", default: '' },
-  dosen_penguji_1: { type: Schema.Types.ObjectId, ref: "dosen", default: '' },
-  dosen_penguji_2: { type: Schema.Types.ObjectId, ref: "dosen", default:'' },
+  dosen_pembimbing_1: {
+    type: Schema.Types.ObjectId,
+    ref: "dosen",
+  },
+  dosen_pembimbing_2: {
+    type: Schema.Types.ObjectId,
+    ref: "dosen",
+  },
+  dosen_penguji_1: { type: Schema.Types.ObjectId, ref: "dosen" },
+  dosen_penguji_2: { type: Schema.Types.ObjectId, ref: "dosen" },
 
   email_dosen_pembimbing: Array,
   email_dosen_penguji: Array,

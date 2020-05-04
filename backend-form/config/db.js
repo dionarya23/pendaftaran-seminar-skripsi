@@ -1,7 +1,7 @@
 const { connect, Schema, model } = require("mongoose");
 
 const dbConnection = connect(
-  process.env.MONGO_URI,
+  process.env.MONGODB_URI,
   { useNewUrlParser: true, useUnifiedTopology: true },
   function (err) {
     if (err) throw err;

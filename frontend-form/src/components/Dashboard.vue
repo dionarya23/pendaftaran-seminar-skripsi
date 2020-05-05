@@ -107,7 +107,9 @@
             <!-- DataTales Example -->
             <div class="card shadow mb-4">
               <div class="card-header py-3">
-                <h6 class="m-0 font-weight-bold text-primary">List Pelaksanaan</h6>
+                <h6 class="m-0 font-weight-bold text-primary">
+                  List Pelaksanaan
+                </h6>
               </div>
               <div class="card-body">
                 <div class="table-responsive">
@@ -183,7 +185,12 @@
                           >
                             Ubah Jadwal
                           </button>
-                          <button class="btn btn-primary">Setujui</button>
+                          <button
+                            @click="sendEmail(mhs._id)"
+                            class="btn btn-primary"
+                          >
+                            Setujui
+                          </button>
                         </td>
 
                         <!-- Ubah Data Modal -->
@@ -242,6 +249,7 @@
                                   Cancel
                                 </button>
                                 <button
+                                  data-dismiss="modal"
                                   class="btn btn-primary"
                                   @click="kirim(mhs)"
                                 >
@@ -353,21 +361,22 @@ export default {
     tempUbah(mhs) {
       (this.tgl_pelaksanaan = mhs.tgl_pelaksanaan), (this.jam = mhs.jam);
     },
-    kirim(_id) {
+    kirim(mhs) {
       if (this.tgl_pelaksanaan === "" || this.jam === "") {
         this.$swal("peringatan", "harap jangan kosong", "warning");
       } else {
-        this.$router
+        this.$http
           .put(`pendaftaran/${mhs._id}/`, {
             tgl_pelaksanaan: this.tgl_pelaksanaan,
-            jam: this.jam,
+            jam: this.jam
           })
           .then(
             resultBro => {
+              console.log("Result nya : ", resultBro.data);
               this.$swal("Berhasil", "Data Berhasil Di Ubah", "success");
               this.tgl_pelaksanaan = "";
               this.jam = "";
-              this.getData()
+              this.getData();
             },
             errorBro => {
               console.log("ada error");
@@ -375,6 +384,40 @@ export default {
             }
           );
       }
+    },
+    sendEmail(_id) {
+      this.$swal
+        .fire({
+          title: "Anda Yakin ?",
+          text: "Pastikan Jadwal ini tidak bentrok",
+          icon: "warning",
+          showCancelButton: true,
+          confirmButtonColor: "#3085d6",
+          cancelButtonColor: "#d33",
+          confirmButtonText: "Ya, Kirim Email",
+          cancelButtonText: "Batal"
+        })
+        .then(result => {
+          if (result.value) {
+            this.$http.post(`pendaftaran/send-email/${_id}/`).then(
+              success => {
+                this.$swal.fire(
+                  "Berhasil",
+                  "Email Berhasil Dikirim",
+                  "success"
+                );
+                this.getData();
+              },
+              errorCallback => {
+                this.$swal.fire(
+                  "Ada Kesalahan",
+                  "Server Sedang Error",
+                  "error"
+                );
+              }
+            );
+          }
+        });
     },
     getData() {
       this.$http.get("pendaftaran/").then(

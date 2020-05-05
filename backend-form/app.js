@@ -3,7 +3,9 @@ require("dotenv").config();
 const { json, urlencoded } = require("body-parser");
 const app = express();
 const cors = require("cors");
-
+const ejs = require("ejs");
+const pdf = require("html-pdf");
+const path = require("path");
 const { log } = console;
 
 const HttpStatus = require("http-status-codes");
@@ -50,7 +52,9 @@ var multipartMiddleware = multipart();
 
 app.get(apiV1("/cloudinary/:public_id"), (req, res) => {
   res.status(HttpStatus.OK).json({
-    data: cloudinary.image(`${req.params.public_id}.pdf`, {flag: "attachment"})
+    data: cloudinary.image(`${req.params.public_id}.pdf`, {
+      flag: "attachment",
+    }),
   });
 });
 
@@ -81,6 +85,47 @@ app.post(apiV1("/upload-pdf"), multipartMiddleware, async (req, res) => {
       message: "error",
     });
   }
+});
+// const moment = require('moment')
+const moment = require('moment')
+app.get(apiV1("/generate-pdf"), (req, res) => {
+  moment.locale("id")
+  res.status(HttpStatus.OK).json({
+    hari: moment("2020-08-10", "YYYY-MM-DD").format("DD-MM-YYYY"),
+    hari_beneran : moment("2020-08-10", "YYYY-MM-DD").format("dddd")
+  })
+  // ejs.renderFile(
+  //   path.join(__dirname, "./views/", "laporan.ejs"),
+  //   {
+  //     mahasiswa: {
+  //       nama_mahasiswa: "Dion Arya Pamungkas",
+  //       nim: "10517016",
+  //       nama_program_studi: "Teknik Cinta",
+  //       judul: "Cara Mendapatkan Cinta Sejati",
+  //       tgl_pelaksanaan: "2020-08-10",
+  //       hari: "senin",
+  //       jam: "10:10",
+  //     },
+  //   },
+  //   (err, data) => {
+  //     if (err) {
+  //       res.send(err);
+  //     } else {
+  //       pdf
+  //         .create(data, {
+  //           height: "10in", // allowed units: mm, cm, in, px
+  //           width: "6.8in",
+  //         })
+  //         .toFile("report.pdf", function (err, data) {
+  //           if (err) {
+  //             res.send(err);
+  //           } else {
+  //             res.send("File created successfully");
+  //           }
+  //         });
+  //     }
+  //   }
+  // );
 });
 
 app.listen(process.env.PORT || 3000, log("Server Running ...."));

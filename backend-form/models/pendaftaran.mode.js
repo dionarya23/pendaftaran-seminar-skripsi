@@ -63,7 +63,7 @@ const PendaftaranSchema = new Schema({
   },
   dosen_penguji_1: { type: Schema.Types.ObjectId, ref: "dosen" },
   dosen_penguji_2: { type: Schema.Types.ObjectId, ref: "dosen" },
-
+  program_studi: {type: Schema.Types.ObjectId, ref: "program_studi"},
   email_dosen_pembimbing: Array,
   email_dosen_penguji: Array,
 });

@@ -319,6 +319,7 @@ export default {
             syarat: localStorage.getItem("syarat"),
             jam: localStorage.getItem("jam"),
             jenis_kegiatan: this.jenis_kegiatan,
+            program_studi: localStorage.getItem("program_studi"),
             mahasiswa: this.mahasiswa,
             dosen_pembimbing_1: this.dosen_pembimbing_1,
             dosen_penguji_1: this.dosen_penguji_1,
@@ -357,6 +358,7 @@ export default {
             judul: localStorage.getItem("judul"),
             syarat: localStorage.getItem("syarat"),
             jam: localStorage.getItem("jam"),
+            program_studi: localStorage.getItem("program_studi"),
             jenis_kegiatan: this.jenis_kegiatan,
             mahasiswa: this.mahasiswa,
             dosen_pembimbing_1: this.dosen_pembimbing_1,
@@ -408,6 +410,7 @@ export default {
             dosen_penguji_1: this.dosen_penguji_1,
             dosen_pembimbing_2: this.dosen_pembimbing_2,
             dosen_penguji_2: this.dosen_penguji_2,
+            program_studi: localStorage.getItem("program_studi"),
             email_dosen_pembimbing: [
               this.email_dosen_pembimbing_1,
               this.email_dosen_pembimbing_2

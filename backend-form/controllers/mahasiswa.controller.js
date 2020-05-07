@@ -4,7 +4,7 @@ const HttpStatus = require("http-status-codes");
 module.exports = {
   async getAllMahasiswa(req, res) {
     try {
-      const mahasiswa = await MahasiswaModel.find({});
+      const mahasiswa = await MahasiswaModel.find({program_studi: req.params._id}).populate("program_studi");
       res.status(HttpStatus.OK).json({
         status: HttpStatus.OK,
         message: "success",

@@ -55,33 +55,27 @@ app.use(apiV1("/program-studi"), require("./routes/program_studi.route"));
 //     });
 //   }
 // });
-const ejs = require("ejs");
-const pdf = require("html-pdf");
-const path = require("path");
-app.get(apiV1("/test"), async (req, res) => {
-  try {
-    const mahasiswa = {};
-    const templatedata = await ejs.renderFile(
-      path.join(__dirname, "./views/", "surat.ejs"),
-      {
-        mahasiswa,
-      }
-    );
+// const ejs = require("ejs");
+// const pdf = require("html-pdf");
+// const path = require("path");
+// const HttpStatus = require("http-status-codes");
+// const MahasiswaModel = require("./models/dosen.model");
 
-    pdf
-      .create(templatedata, { height: "10in", width: "6.5in" })
-      .toFile("./laporan_cuy.pdf", function (err, result) {
-        if (err) return console.log(err);
-        console.log(result); // { filename: '/app/businesscard.pdf' }
-        res.send("success");
-      });
-  } catch (err) {
-    console.log("error generate pdf ", err);
-    res.status(HttpStatus.INTERNAL_SERVER_ERROR).json({
-      status: HttpStatus.INTERNAL_SERVER_ERROR,
-      message: "error",
-    });
-  }
-});
+// app.get(apiV1("/test"), async (req, res) => {
+//   try {
+//     let data = require("./json_data/dosens.json");
+//     const ini = await MahasiswaModel.insertMany(data)
+//     res.status(HttpStatus.OK).json({
+//       message: "Success",
+//       ini,
+//     });
+//   } catch (err) {
+//     console.log("error generate pdf ", err);
+//     res.status(HttpStatus.INTERNAL_SERVER_ERROR).json({
+//       status: HttpStatus.INTERNAL_SERVER_ERROR,
+//       message: "error",
+//     });
+//   }
+// });
 
 app.listen(process.env.PORT || 3000, log("Server Running ...."));

@@ -127,9 +127,7 @@ module.exports = {
       const mahasiswa = {
         nama_mahasiswa: kegiatan.mahasiswa.nama_mahasiswa.toUpperCase(),
         nim: kegiatan.mahasiswa.nim,
-        angkatan: kegiatan.mahasiswa.angkatan
-          ? kegiatan.mahasiswa.angkatan
-          : "2017",
+        angkatan: `20${kegiatan.mahasiswa.nip.substring(0, 2)}`,
         nama_program_studi: kegiatan.program_studi.nama_program_studi,
         judul: kegiatan.judul.toUpperCase(),
         no_surat: req.body.no_surat,

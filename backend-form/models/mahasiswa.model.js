@@ -9,9 +9,10 @@ const MahasiswaSchema = new Schema({
     type: String,
     required: true,
   },
-  angkatan: {
-    type: Number,
-  },
+  program_studi: {
+    type: Schema.Types.ObjectId,
+    ref: "program_studi"
+  }
 });
 
 const MahasiswaModel = model("mahasiswa", MahasiswaSchema);

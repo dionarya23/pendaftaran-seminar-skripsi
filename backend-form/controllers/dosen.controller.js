@@ -4,13 +4,10 @@ const DosenModel = require("../models/dosen.model");
 module.exports = {
   async getDosen(req, res) {
     try {
-      // const ProgramStudi = await ProgramStudiModel.findById(
-      //   req.params.id_jurusan
-      // ).populated("dosen");
-
       const dosen = await DosenModel.find({
         program_studi: req.params.id_jurusan,
       }).populate("program_studi");
+      console.log("Dosen : ", dosen)
 
       res.status(HttpStatus.OK).json({
         status: HttpStatus.OK,

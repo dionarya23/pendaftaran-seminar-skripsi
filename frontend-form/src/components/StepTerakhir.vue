@@ -231,7 +231,7 @@ export default {
       ? localStorage.getItem("program_studi").split("-")[1]
       : "";
 
-    this.$http.get("mahasiswa/").then(
+    this.$http.get(`mahasiswa/program-studi/${localStorage.getItem("program_studi").split("-")[0]}`).then(
       result => {
         this.list_mahasiswa = result.data.data;
       },

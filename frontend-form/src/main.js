@@ -15,7 +15,7 @@ var firebaseConfig = process.env.FirebaseConfig;
 firebase.initializeApp(firebaseConfig);
 firebase.analytics();
 
-Vue.http.options.root = "https://localhost:3000/api/v1/";
+Vue.http.options.root = "https://https://pendaftaran-api.herokuapp.com//api/v1/";
 Vue.config.productionTip = false;
 
 /* eslint-disable no-new */

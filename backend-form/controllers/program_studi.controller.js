@@ -36,9 +36,9 @@ module.exports = {
     }
   },
 
-  async deleteProgramStudi() {
+  async deleteProgramStudi(req, res) {
     try {
-      await ProgramStudi.findByIdAndDelete({ _id: req.body._id });
+      await ProgramStudi.findByIdAndDelete(req.params._id);
 
       res.status(HttpStatus.OK).json({
         status: HttpStatus.OK,

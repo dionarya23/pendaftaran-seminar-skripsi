@@ -5,20 +5,21 @@ const PendaftaranSchema = new Schema({
   email_mahasiswa: {
     type: String,
     validate: [isEmail, "invalid email"],
-    index: {
-      unique: true,
-    },
+    // index: {
+    //   unique: true,
+    // },
   },
   notelp_mahasiswa: {
     type: String,
     required: true,
-    index: {
-      unique: true,
-    },
+    // index: {
+    //   unique: true,
+    // },
   },
   jenis_seminar: {
     type: String,
-    enum: ["", null, "Seminar Proposal", "Seminar Hasil"]
+    enum: ["Tidak Tersedia", "Seminar Proposal", "Seminar Hasil"],
+    default: "Tidak Tersedia"
   },
   judul: {
     type: String,
@@ -38,7 +39,7 @@ const PendaftaranSchema = new Schema({
   },
   jenis_kegiatan: {
     type: String,
-    enum: ["Seminar", "Ujian Pkl", "Ujian Skripsi/Artikel Ilmiah"],
+    enum: ["Seminar", "Ujian Pkl", "Ujian Skripsi"],
   },
   program_studi: {
     type: Schema.Types.ObjectId,
@@ -61,9 +62,13 @@ const PendaftaranSchema = new Schema({
     type: Schema.Types.ObjectId,
     ref: "dosen",
   },
+  no_surat: {
+    type: String,
+    default: "",
+  },
   dosen_penguji_1: { type: Schema.Types.ObjectId, ref: "dosen" },
   dosen_penguji_2: { type: Schema.Types.ObjectId, ref: "dosen" },
-  program_studi: {type: Schema.Types.ObjectId, ref: "program_studi"},
+  program_studi: { type: Schema.Types.ObjectId, ref: "program_studi" },
   email_dosen_pembimbing: Array,
   email_dosen_penguji: Array,
 });

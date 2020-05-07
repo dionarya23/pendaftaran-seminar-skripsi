@@ -9,6 +9,9 @@ const MahasiswaSchema = new Schema({
     type: String,
     required: true,
   },
+  angkatan: {
+    type: Number,
+  },
 });
 
 const MahasiswaModel = model("mahasiswa", MahasiswaSchema);

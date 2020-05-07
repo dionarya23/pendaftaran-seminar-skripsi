@@ -221,6 +221,9 @@ export default {
     };
   },
   mounted() {
+     window.onbeforeunload = function() {
+      return "Are you sure you want to close the window?";
+    };
     this.jenis_kegiatan = localStorage.getItem("jenis_kegiatan")
       ? localStorage.getItem("jenis_kegiatan")
       : "";
@@ -259,7 +262,7 @@ export default {
       this.dosen_pembimbing_2 = localStorage.getItem("dosen_pembimbing_2")
         ? localStorage.getItem("dosen_pembimbing_2")
         : "";
-    } else if (this.jenis_kegiatan === "Ujian Skripsi/Artikel Ilmiah") {
+    } else if (this.jenis_kegiatan === "Ujian Skripsi") {
       this.is_dosen_pembimbing_1 = true;
       this.is_dosen_pembimbing_2 = true;
       this.is_dosen_penguji_1 = true;
@@ -296,6 +299,8 @@ export default {
   },
   methods: {
     submit() {
+      const program = localStorage.getItem("program_studi").split("-");
+
       let _this = this;
       if (this.jenis_kegiatan === "Ujian Pkl") {
         if (
@@ -319,12 +324,16 @@ export default {
             syarat: localStorage.getItem("syarat"),
             jam: localStorage.getItem("jam"),
             jenis_kegiatan: this.jenis_kegiatan,
-            program_studi: localStorage.getItem("program_studi"),
+            program_studi: program[0],
             mahasiswa: this.mahasiswa,
             dosen_pembimbing_1: this.dosen_pembimbing_1,
             dosen_penguji_1: this.dosen_penguji_1,
             email_dosen_pembimbing: [this.email_dosen_pembimbing_1],
-            email_dosen_penguji: [this.email_dosen_penguji_1]
+            email_dosen_penguji: [this.email_dosen_penguji_1],
+            //  jenis_seminar: localStorage.getItem("jenis_seminar")
+            //   ? localStorage.getItem("jenis_seminar")
+            //   : "Tidak Tersedia",
+            program_studi: program[0],
           };
 
           this.$http.post("pendaftaran/", senData).then(
@@ -358,7 +367,6 @@ export default {
             judul: localStorage.getItem("judul"),
             syarat: localStorage.getItem("syarat"),
             jam: localStorage.getItem("jam"),
-            program_studi: localStorage.getItem("program_studi"),
             jenis_kegiatan: this.jenis_kegiatan,
             mahasiswa: this.mahasiswa,
             dosen_pembimbing_1: this.dosen_pembimbing_1,
@@ -366,7 +374,11 @@ export default {
             email_dosen_pembimbing: [
               this.email_dosen_pembimbing_1,
               this.email_dosen_pembimbing_2
-            ]
+            ],
+            jenis_seminar: localStorage.getItem("jenis_seminar")
+              ? localStorage.getItem("jenis_seminar")
+              : "Tidak Tersedia",
+            program_studi: program[0]
           };
 
           this.$http.post("pendaftaran/", senData).then(
@@ -379,7 +391,7 @@ export default {
             }
           );
         }
-      } else if (this.jenis_kegiatan === "Ujian Skripsi/Artikel Ilmiah") {
+      } else if (this.jenis_kegiatan === "Ujian Skripsi") {
         if (
           this.dosen_pembimbing_1 === "" ||
           this.dosen_pembimbing_2 === "" ||
@@ -410,7 +422,10 @@ export default {
             dosen_penguji_1: this.dosen_penguji_1,
             dosen_pembimbing_2: this.dosen_pembimbing_2,
             dosen_penguji_2: this.dosen_penguji_2,
-            program_studi: localStorage.getItem("program_studi"),
+            // jenis_seminar: localStorage.getItem("jenis_seminar")
+            //   ? localStorage.getItem("jenis_seminar")
+            //   : "Tidak Tersedia",
+            program_studi: program[0],
             email_dosen_pembimbing: [
               this.email_dosen_pembimbing_1,
               this.email_dosen_pembimbing_2
@@ -455,7 +470,7 @@ export default {
           },
           onClose: () => {
             clearInterval(timerInterval);
-            this.reset()
+            this.reset();
           }
         })
         .then(result => {

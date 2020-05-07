@@ -38,9 +38,9 @@ module.exports = {
     }
   },
 
-  async deleteJenisKegiatan() {
+  async deleteJenisKegiatan(req, res) {
     try {
-      await JenisKegiatan.findByIdAndDelete({ _id: req.body._id });
+      await JenisKegiatan.findByIdAndDelete(req.params._id);
 
       res.status(HttpStatus.OK).json({
         status: HttpStatus.OK,

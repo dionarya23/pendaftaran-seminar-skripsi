@@ -36,9 +36,9 @@ module.exports = {
     }
   },
 
-  async deleteMahasiswa() {
+  async deleteMahasiswa(req, res) {
     try {
-      await MahasiswaModel.findByIdAndDelete({ _id: req.body._id });
+      await MahasiswaModel.findByIdAndDelete(req.params._id);
 
       res.status(HttpStatus.OK).json({
         status: HttpStatus.OK,

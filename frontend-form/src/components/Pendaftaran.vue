@@ -82,7 +82,7 @@
                       type="radio"
                       name="gridRadios"
                       id="gridRadios3"
-                      value="Ujian Skripsi/Artikel Ilmiah"
+                      value="Ujian Skripsi"
                       v-model="jenis_kegiatan"
                     />
                     <label class="form-check-label" for="gridRadios3">
@@ -123,6 +123,9 @@ export default {
     };
   },
   mounted() {
+    window.onbeforeunload = function() {
+      return "Are you sure you want to close the window?";
+    };
     this.email_mahasiswa = localStorage.getItem("email_mahasiswa")
       ? localStorage.getItem("email_mahasiswa")
       : "";
@@ -139,7 +142,7 @@ export default {
         document
           .getElementById("gridRadios2")
           .setAttribute("checked", "checked");
-      } else if (this.jenis_kegiatan === "Ujian Skripsi/Artikel Ilmiah") {
+      } else if (this.jenis_kegiatan === "Ujian Skripsi") {
         document
           .getElementById("gridRadios3")
           .setAttribute("checked", "checked");
@@ -148,7 +151,6 @@ export default {
   },
   methods: {
     berikutnya() {
-    
       if (
         this.email_mahasiswa === "" ||
         this.notelp_mahasiswa === "" ||

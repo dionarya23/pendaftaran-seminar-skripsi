@@ -1,0 +1,26 @@
+[
+    {
+        "nama_program_studi": "Agroteknologi",
+        "email_program_studi": "agroteknologi@trumojoyo.ac.id"
+    },
+    {
+        "nama_program_studi": "Agribisnis",
+        "email_program_studi": "Agribisnis@trumojoyo.ac.id"
+
+    },
+    {
+        "nama_program_studi": "Teknologi Industri Pertanian",
+        "email_program_studi": "tip@trumojoyo.ac.id"
+
+    },
+    {
+        "nama_program_studi": "Ilmu Kelautan",
+        "email_program_studi": "IlmuKelautan@trumojoyo.ac.id"
+
+    },
+    {
+        "nama_program_studi": "Manajemen Sumberdaya Perairan",
+        "email_program_studi": "ManajemenSumberdayaPerairan@trumojoyo.ac.id"
+
+    }
+]

@@ -1,0 +1,294 @@
+<html>
+<head><meta http-equiv=Content-Type content="text/html; charset=UTF-8">
+<style type="text/css">
+span.cls_002{font-family:Times,serif;font-size:16.0px;color:rgb(0,0,0);font-weight:normal;font-style:normal;text-decoration: none}
+div.cls_002{font-family:Times,serif;font-size:16.0px;color:rgb(0,0,0);font-weight:normal;font-style:normal;text-decoration: none}
+span.cls_003{font-family:Times,serif;font-size:14.0px;color:rgb(0,0,0);font-weight:normal;font-style:normal;text-decoration: none}
+div.cls_003{font-family:Times,serif;font-size:14.0px;color:rgb(0,0,0);font-weight:normal;font-style:normal;text-decoration: none}
+span.cls_004{font-family:Times,serif;font-size:14.0px;color:rgb(0,0,0);font-weight:bold;font-style:normal;text-decoration: none}
+div.cls_004{font-family:Times,serif;font-size:14.0px;color:rgb(0,0,0);font-weight:bold;font-style:normal;text-decoration: none}
+span.cls_005{font-family:Times,serif;font-size:12.1px;color:rgb(0,0,0);font-weight:normal;font-style:normal;text-decoration: none}
+div.cls_005{font-family:Times,serif;font-size:12.1px;color:rgb(0,0,0);font-weight:normal;font-style:normal;text-decoration: none}
+span.cls_011{font-family:Times,serif;font-size:12.1px;color:rgb(17,84,204);font-weight:normal;font-style:normal;text-decoration: underline}
+div.cls_011{font-family:Times,serif;font-size:12.1px;color:rgb(17,84,204);font-weight:normal;font-style:normal;text-decoration: none}
+span.cls_008{font-family:Times,serif;font-size:12.1px;color:rgb(0,0,0);font-weight:bold;font-style:normal;text-decoration: none}
+div.cls_008{font-family:Times,serif;font-size:12.1px;color:rgb(0,0,0);font-weight:bold;font-style:normal;text-decoration: none}
+span.cls_009{font-family:Times,serif;font-size:11.0px;color:rgb(0,0,0);font-weight:normal;font-style:normal;text-decoration: none}
+div.cls_009{font-family:Times,serif;font-size:11.0px;color:rgb(0,0,0);font-weight:normal;font-style:normal;text-decoration: none}
+span.cls_012{font-family:Times,serif;font-size:12.1px;color:rgb(0,0,0);font-weight:bold;font-style:normal;text-decoration: underline}
+div.cls_012{font-family:Times,serif;font-size:12.1px;color:rgb(0,0,0);font-weight:bold;font-style:normal;text-decoration: none}
+span.cls_010{font-family:Times,serif;font-size:10.0px;color:rgb(0,0,0);font-weight:normal;font-style:normal;text-decoration: none}
+div.cls_010{font-family:Times,serif;font-size:10.0px;color:rgb(0,0,0);font-weight:normal;font-style:normal;text-decoration: none}
+</style>
+</head>
+<body>
+<div style="position:absolute;left:50%;margin-left:-306px;top:0px;width:612px;height:936px;border-style:outset;overflow:hidden">
+<div style="position:absolute;left:0px;top:0px">
+<img src="https://i.ibb.co/MRPGLSh/background1.jpg" width=612 height=936></div>
+<div style="position:absolute;left:166.56px;top:13.25px" class="cls_002"><span class="cls_002">KEMENTERIAN PENDIDIKAN DAN KEBUDAYAAN</span></div>
+<div style="position:absolute;left:231.06px;top:33.26px" class="cls_003"><span class="cls_003">UNIVERSITAS TRUNOJOYO MADURA</span></div>
+<div style="position:absolute;left:272.31px;top:49.76px" class="cls_004"><span class="cls_004">FAKULTAS PERTANIAN</span></div>
+<div style="position:absolute;left:213.06px;top:66.00px" class="cls_005"><span class="cls_005">Jalan Raya Telang, PO BOX 2 Kamal, Bangkalan-Madura</span></div>
+<div style="position:absolute;left:233.31px;top:80.25px" class="cls_005"><span class="cls_005">Telepon (031) 3011146, Faksimile (031) 3011506</span></div>
+<div style="position:absolute;left:284.31px;top:94.50px" class="cls_005"><span class="cls_005">Laman </span><span class="cls_011">w<A HREF="http://www.trunojoyo.ac.id/">ww.trunojoyo.ac.id</A> </span></div>
+<div style="position:absolute;left:483.81px;top:123.00px" class="cls_008"><span class="cls_008">Form <%= mahasiswa.form %>-<%= mahasiswa.noUrut+2 %></span></div>
+<div style="position:absolute;left:220.56px;top:145.01px" class="cls_004"><span class="cls_004">BERITA ACARA <%= mahasiswa.jenis_kegiatan %></span></div>
+<div style="position:absolute;left:70.56px;top:192.00px" class="cls_005"><span class="cls_005">Pada hari <%= mahasiswa.hari %> tanggal <%= mahasiswa.tgl_pelaksanaan %> pukul <%= mahasiswa.jam %> WIB</span></div>
+<div style="position:absolute;left:70.56px;top:213.75px" class="cls_005"><span class="cls_005">Telah diselenggarakan <%= mahasiswa.jenis_kegiatan %> bagi mahasiswa :</span></div>
+<div style="position:absolute;left:70.56px;top:235.50px" class="cls_005"><span class="cls_005">Nama</span></div>
+<div style="position:absolute;left:214.56px;top:235.50px" class="cls_005"><span class="cls_005">: <%= mahasiswa.nama_mahasiswa %></span></div>
+<div style="position:absolute;left:70.56px;top:257.25px" class="cls_005"><span class="cls_005">NPM</span></div>
+<div style="position:absolute;left:214.56px;top:257.25px" class="cls_005"><span class="cls_005">: <%= mahasiswa.nim %></span></div>
+<div style="position:absolute;left:70.56px;top:279.00px" class="cls_005"><span class="cls_005">Program Studi</span></div>
+<div style="position:absolute;left:214.56px;top:279.00px" class="cls_005"><span class="cls_005">: <%= mahasiswa.nama_program_studi %></span></div>
+<div style="position:absolute;left:70.56px;top:300.75px" class="cls_005"><span class="cls_005">Angkatan</span></div>
+<div style="position:absolute;left:214.56px;top:300.75px" class="cls_005"><span class="cls_005">: <%= mahasiswa.angkatan %></span></div>
+<div style="position:absolute;left:70.56px;top:322.50px" class="cls_005"><span class="cls_005">Judul <%= mahasiswa.form %></span></div>
+<div style="position:absolute;left:214.56px;top:322.50px" class="cls_005"><span class="cls_005">: <%= mahasiswa.judul %></span></div>
+<div style="position:absolute;left:70.56px;top:365.25px" class="cls_005"><span class="cls_005">Dosen Pembimbing Utama</span></div>
+<div style="position:absolute;left:214.56px;top:365.25px" class="cls_005"><span class="cls_005">: <%= mahasiswa.dosen.dosen_pembimbing_1.nama_dosen %></span></div>
+<div style="position:absolute;left:70.56px;top:387.00px" class="cls_005"><span class="cls_005">Dosen Pembimbing Anggota</span></div>
+<div style="position:absolute;left:214.56px;top:387.00px" class="cls_005"><span class="cls_005">: <%= mahasiswa.dosen.dosen_pembimbing_2.nama_dosen %></span></div>
+<div style="position:absolute;left:72.06px;top:428.25px" class="cls_008"><span class="cls_008">TIM PENGUJI</span></div>
+<div style="position:absolute;left:318.81px;top:428.25px" class="cls_008"><span class="cls_008">TANDA TANGAN</span></div>
+<div style="position:absolute;left:72.06px;top:448.50px" class="cls_005"><span class="cls_005">1. <%= mahasiswa.dosen.dosen_penguji_1.nama_dosen %></span></div>
+<div style="position:absolute;left:318.81px;top:448.50px" class="cls_005"><span class="cls_005">1. ……………………</span></div>
+<div style="position:absolute;left:72.06px;top:468.00px" class="cls_005"><span class="cls_005">2. </span><span class="cls_009"><%= mahasiswa.dosen.dosen_penguji_2.nama_dosen %></span></div>
+<div style="position:absolute;left:318.81px;top:468.00px" class="cls_005"><span class="cls_005">2. ……………………</span></div>
+<div style="position:absolute;left:70.56px;top:509.25px" class="cls_012"><span class="cls_012">CATATAN :</span></div>
+<div style="position:absolute;left:70.56px;top:531.00px" class="cls_005"><span class="cls_005">………………………………………………………………………………………………………</span></div>
+<div style="position:absolute;left:70.56px;top:545.25px" class="cls_005"><span class="cls_005">………………………………………………………………………………………………………</span></div>
+<div style="position:absolute;left:70.56px;top:559.50px" class="cls_005"><span class="cls_005">………………………………………………………………………………………………………</span></div>
+<div style="position:absolute;left:70.56px;top:573.75px" class="cls_005"><span class="cls_005">………………………………………………………………………………………………………</span></div>
+<div style="position:absolute;left:70.56px;top:588.00px" class="cls_005"><span class="cls_005">………………………………………………………………………………………………………</span></div>
+<div style="position:absolute;left:70.56px;top:602.25px" class="cls_005"><span class="cls_005">………………………………………………………………………………………………………</span></div>
+<div style="position:absolute;left:70.56px;top:616.50px" class="cls_005"><span class="cls_005">………………………………………………………………………………………………………</span></div>
+<div style="position:absolute;left:322.56px;top:655.50px" class="cls_005"><span class="cls_005">Bangkalan, <%= mahasiswa.tgl_pelaksanaan %></span></div>
+<div style="position:absolute;left:322.56px;top:677.25px" class="cls_005"><span class="cls_005">Pembimbing Utama,</span></div>
+<div style="position:absolute;left:322.56px;top:741.75px" class="cls_005"><span class="cls_005"><%= mahasiswa.dosen.dosen_pembimbing_1.nama_dosen %></span></div>
+<div style="position:absolute;left:322.56px;top:756.00px" class="cls_005"><span class="cls_005">NIP <%= mahasiswa.dosen.dosen_pembimbing_1.nip %></span></div>
+</div>
+<div style="margin-top:15px;position:absolute;left:50%;margin-left:-306px;top:946px;width:612px;height:936px;border-style:outset;overflow:hidden">
+<div style="position:absolute;left:0px;top:0px">
+<img src="https://i.ibb.co/TYwtpZp/background2.jpg" width=612 height=936></div>
+<div style="position:absolute;left:166.56px;top:13.25px" class="cls_002"><span class="cls_002">KEMENTERIAN PENDIDIKAN DAN KEBUDAYAAN</span></div>
+<div style="position:absolute;left:231.06px;top:33.26px" class="cls_003"><span class="cls_003">UNIVERSITAS TRUNOJOYO MADURA</span></div>
+<div style="position:absolute;left:272.31px;top:49.76px" class="cls_004"><span class="cls_004">FAKULTAS PERTANIAN</span></div>
+<div style="position:absolute;left:213.06px;top:66.00px" class="cls_005"><span class="cls_005">Jalan Raya Telang, PO BOX 2 Kamal, Bangkalan-Madura</span></div>
+<div style="position:absolute;left:233.31px;top:80.25px" class="cls_005"><span class="cls_005">Telepon (031) 3011146, Faksimile (031) 3011506</span></div>
+<div style="position:absolute;left:284.31px;top:94.50px" class="cls_005"><span class="cls_005">Laman </span><span class="cls_011">w<A HREF="http://www.trunojoyo.ac.id/">ww.trunojoyo.ac.id</A> </span></div>
+<div style="position:absolute;left:483.81px;top:123.00px" class="cls_008"><span class="cls_008">Form <%= mahasiswa.form %>-<%= mahasiswa.noUrut+3 %></span></div>
+<div style="position:absolute;left:253.56px;top:159.26px" class="cls_004"><span class="cls_004">NILAI UJIAN <%= mahasiswa.form %></span></div>
+<div style="position:absolute;left:70.56px;top:204.00px" class="cls_005"><span class="cls_005">Nama</span></div>
+<div style="position:absolute;left:178.56px;top:204.00px" class="cls_005"><span class="cls_005">:  <%= mahasiswa.nama_mahasiswa %></span></div>
+<div style="position:absolute;left:70.56px;top:225.75px" class="cls_005"><span class="cls_005">NPM</span></div>
+<div style="position:absolute;left:178.56px;top:225.75px" class="cls_005"><span class="cls_005">:</span></div>
+<div style="position:absolute;left:187.89px;top:225.75px" class="cls_005"><span class="cls_005"><%= mahasiswa.nim %></span></div>
+<div style="position:absolute;left:70.56px;top:247.50px" class="cls_005"><span class="cls_005">Program Studi</span></div>
+<div style="position:absolute;left:178.56px;top:247.50px" class="cls_005"><span class="cls_005">:  <%= mahasiswa.nama_program_studi %></span></div>
+<div style="position:absolute;left:70.56px;top:269.25px" class="cls_005"><span class="cls_005">Judul</span></div>
+<div style="position:absolute;left:178.56px;top:269.25px" class="cls_005"><span class="cls_005">: <%= mahasiswa.judul %></span></div>
+<div style="position:absolute;left:70.56px;top:312.00px" class="cls_005"><span class="cls_005">Diujikan pada hari <%= mahasiswa.hari %> tanggal <%= mahasiswa.tgl_pelaksanaan %> pukul <%= mahasiswa.jam %> WIB</span></div>
+<div style="position:absolute;left:70.56px;top:355.50px" class="cls_008"><span class="cls_008">TIM PENGUJI</span></div>
+<div style="position:absolute;left:346.56px;top:378.00px" class="cls_008"><span class="cls_008">Nilai</span></div>
+<div style="position:absolute;left:416.31px;top:378.00px" class="cls_008"><span class="cls_008">Nilai</span></div>
+<div style="position:absolute;left:79.56px;top:384.75px" class="cls_008"><span class="cls_008">No</span></div>
+<div style="position:absolute;left:180.81px;top:384.75px" class="cls_008"><span class="cls_008">Nama Penguji</span></div>
+<div style="position:absolute;left:342.06px;top:392.25px" class="cls_008"><span class="cls_008">Angka</span></div>
+<div style="position:absolute;left:412.56px;top:392.25px" class="cls_008"><span class="cls_008">Huruf</span></div>
+<div style="position:absolute;left:84.06px;top:408.75px" class="cls_005"><span class="cls_005">1</span></div>
+<div style="position:absolute;left:125.31px;top:408.75px" class="cls_005"><span class="cls_005"><%= mahasiswa.dosen.dosen_penguji_1.nama_dosen %></span></div>
+<div style="position:absolute;left:84.06px;top:427.50px" class="cls_005"><span class="cls_005">2</span></div>
+<div style="position:absolute;left:125.31px;top:427.50px" class="cls_005"><span class="cls_005"><%= mahasiswa.dosen.dosen_penguji_2.nama_dosen %></span></div>
+<div style="position:absolute;left:151.56px;top:445.50px" class="cls_005"><span class="cls_005">Jumlah Rata-Rata</span></div>
+<div style="position:absolute;left:358.56px;top:490.50px" class="cls_005"><span class="cls_005">Bangkalan, <%= mahasiswa.tgl_pelaksanaan %></span></div>
+<div style="position:absolute;left:358.56px;top:512.25px" class="cls_005"><span class="cls_005">Pembimbing Utama,</span></div>
+<div style="position:absolute;left:358.56px;top:569.25px" class="cls_005"><span class="cls_005"><%= mahasiswa.dosen.dosen_pembimbing_1.nama_dosen %></span></div>
+<div style="position:absolute;left:358.56px;top:583.50px" class="cls_005"><span class="cls_005">NIP <%= mahasiswa.dosen.dosen_pembimbing_1.nip %></span></div>
+<div style="position:absolute;left:70.56px;top:626.75px" class="cls_010"><span class="cls_010">Bobot Nilai</span></div>
+<div style="position:absolute;left:186.06px;top:639.50px" class="cls_010"><span class="cls_010">Nilai</span></div>
+<div style="position:absolute;left:95.31px;top:645.50px" class="cls_010"><span class="cls_010">Range Nilai</span></div>
+<div style="position:absolute;left:184.56px;top:651.50px" class="cls_010"><span class="cls_010">Huruf</span></div>
+<div style="position:absolute;left:103.81px;top:664.25px" class="cls_010"><span class="cls_010">80 - 100</span></div>
+<div style="position:absolute;left:192.81px;top:664.25px" class="cls_010"><span class="cls_010">A</span></div>
+<div style="position:absolute;left:102.31px;top:677.00px" class="cls_010"><span class="cls_010">75 - 79.9</span></div>
+<div style="position:absolute;left:189.81px;top:677.00px" class="cls_010"><span class="cls_010">B+</span></div>
+<div style="position:absolute;left:102.31px;top:689.75px" class="cls_010"><span class="cls_010">70 - 74.9</span></div>
+<div style="position:absolute;left:192.81px;top:689.75px" class="cls_010"><span class="cls_010">B</span></div>
+<div style="position:absolute;left:102.31px;top:702.50px" class="cls_010"><span class="cls_010">65 - 69.9</span></div>
+<div style="position:absolute;left:189.81px;top:702.50px" class="cls_010"><span class="cls_010">C+</span></div>
+<div style="position:absolute;left:102.31px;top:715.25px" class="cls_010"><span class="cls_010">55 - 64.9</span></div>
+<div style="position:absolute;left:192.81px;top:715.25px" class="cls_010"><span class="cls_010">C</span></div>
+<div style="position:absolute;left:102.31px;top:728.00px" class="cls_010"><span class="cls_010">50 - 54.9</span></div>
+<div style="position:absolute;left:189.81px;top:728.00px" class="cls_010"><span class="cls_010">D+</span></div>
+<div style="position:absolute;left:102.31px;top:740.75px" class="cls_010"><span class="cls_010">40 - 49.9</span></div>
+<div style="position:absolute;left:192.81px;top:740.75px" class="cls_010"><span class="cls_010">D</span></div>
+<div style="position:absolute;left:112.06px;top:753.50px" class="cls_010"><span class="cls_010">&lt; 40</span></div>
+<div style="position:absolute;left:192.81px;top:753.50px" class="cls_010"><span class="cls_010">E</span></div>
+</div>
+<div style="margin-top:30px;position:absolute;left:50%;margin-left:-306px;top:1892px;width:612px;height:936px;border-style:outset;overflow:hidden">
+<div style="position:absolute;left:0px;top:0px">
+<img src="https://i.ibb.co/hymxcmw/background3.jpg" width=612 height=936></div>
+<div style="position:absolute;left:166.56px;top:13.25px" class="cls_002"><span class="cls_002">KEMENTERIAN PENDIDIKAN DAN KEBUDAYAAN</span></div>
+<div style="position:absolute;left:231.06px;top:33.26px" class="cls_003"><span class="cls_003">UNIVERSITAS TRUNOJOYO MADURA</span></div>
+<div style="position:absolute;left:272.31px;top:49.76px" class="cls_004"><span class="cls_004">FAKULTAS PERTANIAN</span></div>
+<div style="position:absolute;left:213.06px;top:66.00px" class="cls_005"><span class="cls_005">Jalan Raya Telang, PO BOX 2 Kamal, Bangkalan-Madura</span></div>
+<div style="position:absolute;left:233.31px;top:80.25px" class="cls_005"><span class="cls_005">Telepon (031) 3011146, Faksimile (031) 3011506</span></div>
+<div style="position:absolute;left:284.31px;top:94.50px" class="cls_005"><span class="cls_005">Laman </span><span class="cls_011">w<A HREF="http://www.trunojoyo.ac.id/">ww.trunojoyo.ac.id</A> </span></div>
+<div style="position:absolute;left:483.81px;top:123.00px" class="cls_008"><span class="cls_008">Form <%= mahasiswa.form %>-<%= mahasiswa.noUrut+4 %></span></div>
+<div style="position:absolute;left:227.31px;top:151.76px" class="cls_004"><span class="cls_004">REKAP NILAI UJIAN <%= mahasiswa.form %></span></div>
+<div style="position:absolute;left:70.56px;top:182.25px" class="cls_005"><span class="cls_005">Nama</span></div>
+<div style="position:absolute;left:178.56px;top:182.25px" class="cls_005"><span class="cls_005">:  <%= mahasiswa.nama_mahasiswa %></span></div>
+<div style="position:absolute;left:70.56px;top:204.00px" class="cls_005"><span class="cls_005">NPM</span></div>
+<div style="position:absolute;left:178.56px;top:204.00px" class="cls_005"><span class="cls_005">:</span></div>
+<div style="position:absolute;left:187.89px;top:204.00px" class="cls_005"><span class="cls_005"><%= mahasiswa.nim %></span></div>
+<div style="position:absolute;left:70.56px;top:225.75px" class="cls_005"><span class="cls_005">Program Studi</span></div>
+<div style="position:absolute;left:178.56px;top:225.75px" class="cls_005"><span class="cls_005">:  <%= mahasiswa.nama_program_studi %></span></div>
+<div style="position:absolute;left:70.56px;top:247.50px" class="cls_005"><span class="cls_005">Judul</span></div>
+<div style="position:absolute;left:178.56px;top:247.50px" class="cls_005"><span class="cls_005">: <%= mahasiswa.judul %></span></div>
+<div style="position:absolute;left:70.56px;top:290.25px" class="cls_005"><span class="cls_005">Diujikan pada hari <%= mahasiswa.hari %> tanggal <%= mahasiswa.tgl_pelaksanaan %> pukul <%= mahasiswa.jam %> WIB</span></div>
+<div style="position:absolute;left:160.56px;top:333.75px" class="cls_008"><span class="cls_008">TIM PENGUJI</span></div>
+<div style="position:absolute;left:346.56px;top:356.25px" class="cls_008"><span class="cls_008">Nilai</span></div>
+<div style="position:absolute;left:416.31px;top:356.25px" class="cls_008"><span class="cls_008">Nilai</span></div>
+<div style="position:absolute;left:79.56px;top:363.00px" class="cls_008"><span class="cls_008">No</span></div>
+<div style="position:absolute;left:180.81px;top:363.00px" class="cls_008"><span class="cls_008">Nama Penguji</span></div>
+<div style="position:absolute;left:342.06px;top:370.50px" class="cls_008"><span class="cls_008">Angka</span></div>
+<div style="position:absolute;left:412.56px;top:370.50px" class="cls_008"><span class="cls_008">Huruf</span></div>
+<div style="position:absolute;left:84.06px;top:387.00px" class="cls_005"><span class="cls_005">1</span></div>
+<div style="position:absolute;left:125.31px;top:387.00px" class="cls_005"><span class="cls_005"><%= mahasiswa.dosen.dosen_penguji_1.nama_dosen %></span></div>
+<div style="position:absolute;left:84.06px;top:405.75px" class="cls_005"><span class="cls_005">2</span></div>
+<div style="position:absolute;left:125.31px;top:405.75px" class="cls_005"><span class="cls_005"><%= mahasiswa.dosen.dosen_penguji_2.nama_dosen %></span></div>
+<div style="position:absolute;left:151.56px;top:423.75px" class="cls_005"><span class="cls_005">Jumlah Rata-Rata</span></div>
+<div style="position:absolute;left:358.56px;top:468.75px" class="cls_005"><span class="cls_005">Bangkalan, <%= mahasiswa.tgl_pelaksanaan %></span></div>
+<div style="position:absolute;left:358.56px;top:490.50px" class="cls_005"><span class="cls_005">Pembimbing Utama,</span></div>
+<div style="position:absolute;left:358.56px;top:547.50px" class="cls_005"><span class="cls_005"><%= mahasiswa.dosen.dosen_pembimbing_1.nama_dosen %></span></div>
+<div style="position:absolute;left:358.56px;top:561.75px" class="cls_005"><span class="cls_005">NIP <%= mahasiswa.dosen.dosen_pembimbing_1.nip %></span></div>
+<div style="position:absolute;left:70.56px;top:605.00px" class="cls_010"><span class="cls_010">Bobot Nilai</span></div>
+<div style="position:absolute;left:186.06px;top:617.75px" class="cls_010"><span class="cls_010">Nilai</span></div>
+<div style="position:absolute;left:95.31px;top:623.75px" class="cls_010"><span class="cls_010">Range Nilai</span></div>
+<div style="position:absolute;left:184.56px;top:629.75px" class="cls_010"><span class="cls_010">Huruf</span></div>
+<div style="position:absolute;left:103.81px;top:642.50px" class="cls_010"><span class="cls_010">80 - 100</span></div>
+<div style="position:absolute;left:192.81px;top:642.50px" class="cls_010"><span class="cls_010">A</span></div>
+<div style="position:absolute;left:102.31px;top:655.25px" class="cls_010"><span class="cls_010">75 - 79.9</span></div>
+<div style="position:absolute;left:189.81px;top:655.25px" class="cls_010"><span class="cls_010">B+</span></div>
+<div style="position:absolute;left:102.31px;top:668.00px" class="cls_010"><span class="cls_010">70 - 74.9</span></div>
+<div style="position:absolute;left:192.81px;top:668.00px" class="cls_010"><span class="cls_010">B</span></div>
+<div style="position:absolute;left:102.31px;top:680.75px" class="cls_010"><span class="cls_010">65 - 69.9</span></div>
+<div style="position:absolute;left:189.81px;top:680.75px" class="cls_010"><span class="cls_010">C+</span></div>
+<div style="position:absolute;left:102.31px;top:693.50px" class="cls_010"><span class="cls_010">55 - 64.9</span></div>
+<div style="position:absolute;left:192.81px;top:693.50px" class="cls_010"><span class="cls_010">C</span></div>
+<div style="position:absolute;left:102.31px;top:706.25px" class="cls_010"><span class="cls_010">50 - 54.9</span></div>
+<div style="position:absolute;left:189.81px;top:706.25px" class="cls_010"><span class="cls_010">D+</span></div>
+<div style="position:absolute;left:102.31px;top:719.00px" class="cls_010"><span class="cls_010">40 - 49.9</span></div>
+<div style="position:absolute;left:192.81px;top:719.00px" class="cls_010"><span class="cls_010">D</span></div>
+<div style="position:absolute;left:112.06px;top:731.75px" class="cls_010"><span class="cls_010">&lt; 40</span></div>
+<div style="position:absolute;left:192.81px;top:731.75px" class="cls_010"><span class="cls_010">E</span></div>
+</div>
+<div style="margin-top:45px;position:absolute;left:50%;margin-left:-306px;top:2838px;width:612px;height:936px;border-style:outset;overflow:hidden">
+<div style="position:absolute;left:0px;top:0px">
+<img src="https://i.ibb.co/ry2dVmr/background4.jpg" width=612 height=936></div>
+<div style="position:absolute;left:166.56px;top:13.25px" class="cls_002"><span class="cls_002">KEMENTERIAN PENDIDIKAN DAN KEBUDAYAAN</span></div>
+<div style="position:absolute;left:231.06px;top:33.26px" class="cls_003"><span class="cls_003">UNIVERSITAS TRUNOJOYO MADURA</span></div>
+<div style="position:absolute;left:272.31px;top:49.76px" class="cls_004"><span class="cls_004">FAKULTAS PERTANIAN</span></div>
+<div style="position:absolute;left:213.06px;top:66.00px" class="cls_005"><span class="cls_005">Jalan Raya Telang, PO BOX 2 Kamal, Bangkalan-Madura</span></div>
+<div style="position:absolute;left:233.31px;top:80.25px" class="cls_005"><span class="cls_005">Telepon (031) 3011146, Faksimile (031) 3011506</span></div>
+<div style="position:absolute;left:284.31px;top:94.50px" class="cls_005"><span class="cls_005">Laman </span><span class="cls_011">w<A HREF="http://www.trunojoyo.ac.id/">ww.trunojoyo.ac.id</A> </span></div>
+<div style="position:absolute;left:483.81px;top:123.00px" class="cls_008"><span class="cls_008">Form <%= mahasiswa.form %>-<%= mahasiswa.noUrut+5 %></span></div>
+<div style="position:absolute;left:237.06px;top:137.51px" class="cls_004"><span class="cls_004">REVISI LAPORAN <%= mahasiswa.form %></span></div>
+<div style="position:absolute;left:70.56px;top:175.50px" class="cls_005"><span class="cls_005">Nama</span></div>
+<div style="position:absolute;left:178.56px;top:175.50px" class="cls_005"><span class="cls_005">:  <%= mahasiswa.nama_mahasiswa %></span></div>
+<div style="position:absolute;left:70.56px;top:197.25px" class="cls_005"><span class="cls_005">NPM</span></div>
+<div style="position:absolute;left:178.56px;top:197.25px" class="cls_005"><span class="cls_005">:</span></div>
+<div style="position:absolute;left:187.89px;top:197.25px" class="cls_005"><span class="cls_005"><%= mahasiswa.nim %></span></div>
+<div style="position:absolute;left:70.56px;top:219.00px" class="cls_005"><span class="cls_005">Program Studi</span></div>
+<div style="position:absolute;left:178.56px;top:219.00px" class="cls_005"><span class="cls_005">:  <%= mahasiswa.nama_program_studi %></span></div>
+<div style="position:absolute;left:70.56px;top:240.75px" class="cls_005"><span class="cls_005">Judul</span></div>
+<div style="position:absolute;left:178.56px;top:240.75px" class="cls_005"><span class="cls_005">: <%= mahasiswa.judul %></span></div>
+<div style="position:absolute;left:453.06px;top:284.25px" class="cls_008"><span class="cls_008">Tanda Tangan</span></div>
+<div style="position:absolute;left:77.31px;top:291.00px" class="cls_008"><span class="cls_008">No</span></div>
+<div style="position:absolute;left:129.81px;top:291.00px" class="cls_008"><span class="cls_008">Nama Dosen Penguji</span></div>
+<div style="position:absolute;left:317.31px;top:291.00px" class="cls_008"><span class="cls_008">Materi Revisi</span></div>
+<div style="position:absolute;left:475.56px;top:298.50px" class="cls_008"><span class="cls_008">Revisi</span></div>
+<div style="position:absolute;left:79.56px;top:360.00px" class="cls_005"><span class="cls_005">1</span></div>
+<div style="position:absolute;left:116.31px;top:360.00px" class="cls_005"><span class="cls_005"><%= mahasiswa.dosen.dosen_penguji_1.nama_dosen %></span></div>
+<div style="position:absolute;left:116.31px;top:462.00px" class="cls_005"><span class="cls_005"><%= mahasiswa.dosen.dosen_penguji_2.nama_dosen %></span></div>
+<div style="position:absolute;left:79.56px;top:468.75px" class="cls_005"><span class="cls_005">2</span></div>
+<div style="position:absolute;left:70.56px;top:545.25px" class="cls_005"><span class="cls_005">*) Diisi oleh dosen penguji waktu ujian dan diserahkan kepada mahasiswa, ditandatangani setelah</span></div>
+<div style="position:absolute;left:84.81px;top:559.50px" class="cls_005"><span class="cls_005">revisi disetujui penguji.</span></div>
+</div>
+<div style="margin-top:60px;position:absolute;left:50%;margin-left:-306px;top:3784px;width:612px;height:936px;border-style:outset;overflow:hidden">
+<div style="position:absolute;left:0px;top:0px">
+<img src="https://i.ibb.co/NmPZKhV/background5.jpg" width=612 height=936></div>
+<div style="position:absolute;left:166.56px;top:13.25px" class="cls_002"><span class="cls_002">KEMENTERIAN PENDIDIKAN DAN KEBUDAYAAN</span></div>
+<div style="position:absolute;left:231.06px;top:33.26px" class="cls_003"><span class="cls_003">UNIVERSITAS TRUNOJOYO MADURA</span></div>
+<div style="position:absolute;left:272.31px;top:49.76px" class="cls_004"><span class="cls_004">FAKULTAS PERTANIAN</span></div>
+<div style="position:absolute;left:213.06px;top:66.00px" class="cls_005"><span class="cls_005">Jalan Raya Telang, PO BOX 2 Kamal, Bangkalan-Madura</span></div>
+<div style="position:absolute;left:233.31px;top:80.25px" class="cls_005"><span class="cls_005">Telepon (031) 3011146, Faksimile (031) 3011506</span></div>
+<div style="position:absolute;left:284.31px;top:94.50px" class="cls_005"><span class="cls_005">Laman </span><span class="cls_011">w<A HREF="http://www.trunojoyo.ac.id/">ww.trunojoyo.ac.id</A> </span></div>
+<div style="position:absolute;left:483.81px;top:123.00px" class="cls_008"><span class="cls_008">Form <%= mahasiswa.form %>-<%= mahasiswa.noUrut+6 %></span></div>
+<div style="position:absolute;left:251.31px;top:151.76px" class="cls_004"><span class="cls_004">NILAI AKHIR <%= mahasiswa.form %></span></div>
+<div style="position:absolute;left:70.56px;top:182.25px" class="cls_005"><span class="cls_005">Nama</span></div>
+<div style="position:absolute;left:178.56px;top:182.25px" class="cls_005"><span class="cls_005">:  <%= mahasiswa.nama_mahasiswa %></span></div>
+<div style="position:absolute;left:70.56px;top:204.00px" class="cls_005"><span class="cls_005">NPM</span></div>
+<div style="position:absolute;left:178.56px;top:204.00px" class="cls_005"><span class="cls_005">:</span></div>
+<div style="position:absolute;left:187.89px;top:204.00px" class="cls_005"><span class="cls_005"><%= mahasiswa.nim %></span></div>
+<div style="position:absolute;left:70.56px;top:225.75px" class="cls_005"><span class="cls_005">Program Studi</span></div>
+<div style="position:absolute;left:178.56px;top:225.75px" class="cls_005"><span class="cls_005">:  <%= mahasiswa.nama_program_studi %></span></div>
+<div style="position:absolute;left:70.56px;top:247.50px" class="cls_005"><span class="cls_005">Judul</span></div>
+<div style="position:absolute;left:178.56px;top:247.50px" class="cls_005"><span class="cls_005">: <%= mahasiswa.judul %></span></div>
+<div style="position:absolute;left:70.56px;top:297.75px" class="cls_008"><span class="cls_008">Sasaran Penilaian:</span></div>
+<div style="position:absolute;left:78.81px;top:321.75px" class="cls_005"><span class="cls_005">NO</span></div>
+<div style="position:absolute;left:162.06px;top:321.75px" class="cls_005"><span class="cls_005">URAIAN</span></div>
+<div style="position:absolute;left:285.81px;top:321.75px" class="cls_005"><span class="cls_005">NILAI</span></div>
+<div style="position:absolute;left:371.31px;top:321.75px" class="cls_005"><span class="cls_005">SKS</span></div>
+<div style="position:absolute;left:435.81px;top:321.75px" class="cls_005"><span class="cls_005">NILAI X SKS</span></div>
+<div style="position:absolute;left:83.31px;top:348.00px" class="cls_005"><span class="cls_005">1.</span></div>
+<div style="position:absolute;left:110.31px;top:348.00px" class="cls_005"><span class="cls_005">Proposal</span></div>
+<div style="position:absolute;left:375.06px;top:348.00px" class="cls_005"><span class="cls_005">0,3</span></div>
+<div style="position:absolute;left:83.31px;top:366.00px" class="cls_005"><span class="cls_005">2.</span></div>
+<div style="position:absolute;left:110.31px;top:366.00px" class="cls_005"><span class="cls_005">Pelaksanaan</span></div>
+<div style="position:absolute;left:372.06px;top:366.00px" class="cls_005"><span class="cls_005">1,05</span></div>
+<div style="position:absolute;left:83.31px;top:384.00px" class="cls_005"><span class="cls_005">3.</span></div>
+<div style="position:absolute;left:110.31px;top:384.00px" class="cls_005"><span class="cls_005">Pembimbingan</span></div>
+<div style="position:absolute;left:372.06px;top:384.00px" class="cls_005"><span class="cls_005">0,15</span></div>
+<div style="position:absolute;left:83.31px;top:402.75px" class="cls_005"><span class="cls_005">4.</span></div>
+<div style="position:absolute;left:110.31px;top:402.75px" class="cls_005"><span class="cls_005">Ujian</span></div>
+<div style="position:absolute;left:375.06px;top:402.75px" class="cls_005"><span class="cls_005">1,5</span></div>
+<div style="position:absolute;left:184.56px;top:420.75px" class="cls_005"><span class="cls_005">TOTAL</span></div>
+<div style="position:absolute;left:379.56px;top:420.75px" class="cls_005"><span class="cls_005">3</span></div>
+<div style="position:absolute;left:70.56px;top:465.75px" class="cls_005"><span class="cls_005">Nilai PKL = ( Nilai x SKS )</span></div>
+<div style="position:absolute;left:219.99px;top:465.75px" class="cls_005"><span class="cls_005">=</span></div>
+<div style="position:absolute;left:244.76px;top:465.75px" class="cls_005"><span class="cls_005">_________</span></div>
+<div style="position:absolute;left:322.56px;top:465.75px" class="cls_005"><span class="cls_005">=</span></div>
+<div style="position:absolute;left:350.33px;top:465.75px" class="cls_005"><span class="cls_005">………. =……</span></div>
+<div style="position:absolute;left:444.09px;top:465.75px" class="cls_005"><span class="cls_005">…….(huruf)</span></div>
+<div style="position:absolute;left:157.56px;top:480.00px" class="cls_005"><span class="cls_005">SKS</span></div>
+<div style="position:absolute;left:268.56px;top:480.00px" class="cls_005"><span class="cls_005">3</span></div>
+<div style="position:absolute;left:358.56px;top:508.50px" class="cls_005"><span class="cls_005">Bangkalan, <%= mahasiswa.tgl_pelaksanaan %></span></div>
+<div style="position:absolute;left:358.56px;top:530.25px" class="cls_005"><span class="cls_005">Pembimbing Utama,</span></div>
+<div style="position:absolute;left:358.56px;top:587.25px" class="cls_005"><span class="cls_005"><%= mahasiswa.dosen.dosen_pembimbing_1.nama_dosen %></span></div>
+<div style="position:absolute;left:358.56px;top:601.50px" class="cls_005"><span class="cls_005">NIP <%= mahasiswa.dosen.dosen_pembimbing_1.nip %></span></div>
+<div style="position:absolute;left:70.56px;top:644.75px" class="cls_010"><span class="cls_010">Bobot Nilai</span></div>
+<div style="position:absolute;left:186.06px;top:657.50px" class="cls_010"><span class="cls_010">Nilai</span></div>
+<div style="position:absolute;left:95.31px;top:663.50px" class="cls_010"><span class="cls_010">Range Nilai</span></div>
+<div style="position:absolute;left:184.56px;top:669.50px" class="cls_010"><span class="cls_010">Huruf</span></div>
+<div style="position:absolute;left:103.81px;top:682.25px" class="cls_010"><span class="cls_010">80 - 100</span></div>
+<div style="position:absolute;left:192.81px;top:682.25px" class="cls_010"><span class="cls_010">A</span></div>
+<div style="position:absolute;left:102.31px;top:695.00px" class="cls_010"><span class="cls_010">75 - 79.9</span></div>
+<div style="position:absolute;left:189.81px;top:695.00px" class="cls_010"><span class="cls_010">B+</span></div>
+<div style="position:absolute;left:102.31px;top:707.75px" class="cls_010"><span class="cls_010">70 - 74.9</span></div>
+<div style="position:absolute;left:192.81px;top:707.75px" class="cls_010"><span class="cls_010">B</span></div>
+<div style="position:absolute;left:102.31px;top:720.50px" class="cls_010"><span class="cls_010">65 - 69.9</span></div>
+<div style="position:absolute;left:189.81px;top:720.50px" class="cls_010"><span class="cls_010">C+</span></div>
+<div style="position:absolute;left:102.31px;top:733.25px" class="cls_010"><span class="cls_010">55 - 64.9</span></div>
+<div style="position:absolute;left:192.81px;top:733.25px" class="cls_010"><span class="cls_010">C</span></div>
+<div style="position:absolute;left:102.31px;top:746.00px" class="cls_010"><span class="cls_010">50 - 54.9</span></div>
+<div style="position:absolute;left:189.81px;top:746.00px" class="cls_010"><span class="cls_010">D+</span></div>
+<div style="position:absolute;left:102.31px;top:758.75px" class="cls_010"><span class="cls_010">40 - 49.9</span></div>
+<div style="position:absolute;left:192.81px;top:758.75px" class="cls_010"><span class="cls_010">D</span></div>
+<div style="position:absolute;left:112.06px;top:771.50px" class="cls_010"><span class="cls_010">&lt; 40</span></div>
+<div style="position:absolute;left:192.81px;top:771.50px" class="cls_010"><span class="cls_010">E</span></div>
+</div>
+
+</body>
+</html>

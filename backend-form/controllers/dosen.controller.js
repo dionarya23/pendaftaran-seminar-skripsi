@@ -61,9 +61,9 @@ module.exports = {
     }
   },
 
-  async deleteDosen() {
+  async deleteDosen(req, res) {
     try {
-      await DosenModel.findByIdAndDelete({ _id: req.body._id });
+      await DosenModel.findByIdAndDelete(req.params._id);
 
       res.status(HttpStatus.OK).json({
         status: HttpStatus.OK,

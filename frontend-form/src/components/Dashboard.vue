@@ -121,6 +121,7 @@
                   >
                     <thead>
                       <tr>
+                        <th>NPM</th>
                         <th>Nama Mahasiswa</th>
                         <th>Jenis Kegiatan</th>
                         <th>Tanggal Pelaksanaan</th>
@@ -133,6 +134,7 @@
                     </thead>
                     <tfoot>
                       <tr>
+                        <th>NPM</th>
                         <th>Nama Mahasiswa</th>
                         <th>Jenis Kegiatan</th>
                         <th>Tanggal Pelaksanaan</th>
@@ -145,6 +147,7 @@
                     </tfoot>
                     <tbody>
                       <tr v-for="mhs in list_mahasiswa" :key="mhs._id">
+                        <td>{{ mhs.mahasiswa.nim }}</td>
                         <td>{{ mhs.mahasiswa.nama_mahasiswa }}</td>
                         <td>{{ mhs.jenis_kegiatan }}</td>
                         <td>{{ mhs.tgl_pelaksanaan }}</td>
@@ -163,7 +166,7 @@
                             <br /><br
                           /></span>
                           <span v-if="mhs.dosen_penguji_2"
-                            >{{ mhs.dosen_pemguji_2.nama_dosen }} - Penguji
+                            >{{ mhs.dosen_penguji_2.nama_dosen }} - Penguji
                             2</span
                           >
                         </td>
@@ -189,7 +192,7 @@
                             @click="sendEmail(mhs._id)"
                             class="btn btn-primary"
                           >
-                            Setujui
+                            Kirim Email
                           </button>
                         </td>
 
@@ -337,7 +340,8 @@ export default {
     return {
       list_mahasiswa: [],
       tgl_pelaksanaan: "",
-      jam: ""
+      jam: "",
+      no_surat: ""
     };
   },
   mounted() {
@@ -388,34 +392,43 @@ export default {
     sendEmail(_id) {
       this.$swal
         .fire({
-          title: "Anda Yakin ?",
-          text: "Pastikan Jadwal ini tidak bentrok",
-          icon: "warning",
+          title: "Masukan No Surat",
+          input: "text",
+          inputAttributes: {
+            autocapitalize: "off"
+          },
           showCancelButton: true,
-          confirmButtonColor: "#3085d6",
-          cancelButtonColor: "#d33",
-          confirmButtonText: "Ya, Kirim Email",
-          cancelButtonText: "Batal"
+          confirmButtonText: "Kirim Email",
+          showLoaderOnConfirm: true,
+          preConfirm: no_surat => {
+            if (no_surat === "".trim()) {
+              this.$swal.showValidationMessage(`Tidak Boleh Kosong`);
+            } else {
+              this.$http.post(
+                `pendaftaran/send-email/${_id}/`,
+                {
+                  no_surat: no_surat
+                },
+                success => {
+                  this.$swal.fire(
+                    "Berhasil",
+                    "Berhasil Mengirim Email",
+                    "success"
+                  );
+                  this.getData();
+                },
+                error_bro => {
+                  this.$swal.showValidationMessage(`Ada Kesalahan Pada Server`);
+                }
+              );
+            }
+          },
+          allowOutsideClick: () => !this.$swal.isLoading()
         })
         .then(result => {
           if (result.value) {
-            this.$http.post(`pendaftaran/send-email/${_id}/`).then(
-              success => {
-                this.$swal.fire(
-                  "Berhasil",
-                  "Email Berhasil Dikirim",
-                  "success"
-                );
-                this.getData();
-              },
-              errorCallback => {
-                this.$swal.fire(
-                  "Ada Kesalahan",
-                  "Server Sedang Error",
-                  "error"
-                );
-              }
-            );
+            this.$swal.fire("Berhasil", "Berhasil Mengirim Email", "success");
+            this.getData();
           }
         });
     },

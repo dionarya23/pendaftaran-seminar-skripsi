@@ -3,8 +3,8 @@ const sgTransport = require("nodemailer-sendgrid-transport");
 
 let options = {
   auth: {
-    api_user: "ion1999",
-    api_key: "D10n4ryap",
+    api_user: process.env.APIUSER,
+    api_key: process.env.APIKEY,
   },
 };
 

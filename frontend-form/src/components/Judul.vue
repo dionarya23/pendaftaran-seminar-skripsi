@@ -58,7 +58,7 @@
                       type="radio"
                       name="gridRadios"
                       id="seminar_hasil"
-                      value="Ujian Pkl"
+                      value="Seminar Hasil"
                       v-model="jenis_seminar"
                     />
                     <label class="form-check-label" for="gridRadios1">
@@ -72,7 +72,7 @@
                       name="gridRadios"
                       id="seminar_proposal"
                       value="Seminar Proposal"
-                      v-model="jenis_kegiatan"
+                      v-model="jenis_seminar"
                     />
                     <label class="form-check-label" for="gridRadios2">
                       Seminar Proposal
@@ -85,7 +85,7 @@
         </div>
 
         <div
-          v-else-if="jenis_kegiatan == 'Ujian Skripsi/Artikel Ilmiah'"
+          v-else-if="jenis_kegiatan == 'Ujian Skripsi'"
           class="card"
           style="margin-top:10px"
         >
@@ -163,7 +163,7 @@
               pdf. Total file maksimal 1 MB. (Format nama file :
               namaberkas_nama_npm).
             </p>
-            <p v-else-if="jenis_kegiatan === 'Ujian Skripsi/Artikel Ilmiah'">
+            <p v-else-if="jenis_kegiatan === 'Ujian Skripsi'">
               Upload file meliputi : Acc Pembimbing, Acc Penguji, KRS, Transkrip
               Sementara, FS-2, FS-4, TOEFL, Bebas plagiasi. File harus disatukan
               dan bertipe pdf. Total file maksimal 1 MB. (Format nama file :
@@ -288,6 +288,9 @@ export default {
     };
   },
   mounted() {
+     window.onbeforeunload = function() {
+      return "Are you sure you want to close the window?";
+    };
     this.jenis_kegiatan = localStorage.getItem("jenis_kegiatan");
     this.$http.get("program-studi/").then(
       result => {
@@ -324,7 +327,7 @@ export default {
           .setAttribute("checked", "checked");
       } else if (this.jenis_seminar === "Seminar Proposal") {
         document
-          .getElementById("seminar_propsal")
+          .getElementById("seminar_proposal")
           .setAttribute("checked", "checked");
       }
     }
@@ -353,6 +356,7 @@ export default {
             this.jenis_seminar === "" ? null : this.jenis_seminar
           );
           localStorage.setItem("program_studi", this.program_studi);
+          // localStorage.setItem("nameFile", this.nameFile)
           this.$router.push({ name: "StepTerakhir" });
         }
       } else {
@@ -375,6 +379,7 @@ export default {
             this.jenis_seminar === "" ? null : this.jenis_seminar
           );
           localStorage.setItem("program_studi", this.program_studi);
+          // localStorage.setItem("nameFile", this.nameFile)
 
           this.$router.push({ name: "StepTerakhir" });
         }
@@ -388,6 +393,7 @@ export default {
       var _this = this;
       this.pdf = this.$refs.syarat.files[0];
       this.nameFile = this.pdf.name;
+
 
       const storageRef = firebase
         .storage()
@@ -407,7 +413,7 @@ export default {
           this.isUpload = false;
           storageRef.snapshot.ref.getDownloadURL().then(url => {
             localStorage.setItem("syarat", url);
-            localStorage.setItem("namaFile", _this.namaFile )
+            localStorage.setItem("namaeFile", _this.nameFile )
           });
         }
       );

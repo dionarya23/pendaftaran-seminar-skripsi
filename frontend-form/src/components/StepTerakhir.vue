@@ -452,18 +452,18 @@ export default {
       let timerInterval;
       this.$swal
         .fire({
-          title: "Berhasil, Anda Telah Medaftar",
+          title: "Berhasil, Anda Telah Terdaftar",
           html: "Terimakasih",
           timer: 4000,
           timerProgressBar: true,
           onBeforeOpen: () => {
             this.$swal.showLoading();
             timerInterval = setInterval(() => {
-              const content = Swal.getContent();
+              const content = this.$swal.getContent();
               if (content) {
                 const b = content.querySelector("b");
                 if (b) {
-                  b.textContent = Swal.getTimerLeft();
+                  b.textContent = this.$swal.getTimerLeft();
                 }
               }
             }, 100);

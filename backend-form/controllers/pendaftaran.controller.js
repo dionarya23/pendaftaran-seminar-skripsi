@@ -47,6 +47,7 @@ module.exports = {
       res.status(HttpStatus.INTERNAL_SERVER_ERROR).json({
         status: HttpStatus.INTERNAL_SERVER_ERROR,
         message: "error",
+        err: err
       });
     }
   },
@@ -127,10 +128,10 @@ module.exports = {
       const mahasiswa = {
         nama_mahasiswa: kegiatan.mahasiswa.nama_mahasiswa.toUpperCase(),
         nim: kegiatan.mahasiswa.nim,
-        angkatan: `20${kegiatan.mahasiswa.nip.substring(0, 2)}`,
+        angkatan: `20${kegiatan.mahasiswa.nim.substring(0, 2)}`,
         nama_program_studi: kegiatan.program_studi.nama_program_studi,
         judul: kegiatan.judul.toUpperCase(),
-        no_surat: req.body.no_surat,
+        no_surat: 'No Surat',
         tgl_pelaksanaan: moment(kegiatan.tgl_pelaksanaan, "YYYY-MM-DD").format(
           "DD MMMM YYYY"
         ),
@@ -187,7 +188,7 @@ module.exports = {
         {
           surat: function (callback) {
             pdf
-              .create(suratTemplate, { height: "10in", width: "6.5in" })
+              .create(suratTemplate, { height: "9.4in", width: "6.3in" })
               .toBuffer(async function (err, buffer) {
                 if (err) {
                   callback(err, null);
@@ -198,7 +199,7 @@ module.exports = {
           },
           bap: function (callback) {
             pdf
-              .create(bapTemplate, { height: "10in", width: "6.5in" })
+              .create(bapTemplate, { height: "9.4in", width: "6.3in" })
               .toBuffer(async function (err, buffer) {
                 if (err) {
                   callback(err, null);
@@ -207,7 +208,7 @@ module.exports = {
                 }
               });
           },
-        },
+        }, 
         async function (errorAsync, results) {
           if (errorAsync) {
             console.log(

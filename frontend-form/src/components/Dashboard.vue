@@ -390,6 +390,7 @@ export default {
       }
     },
     sendEmail(_id) {
+      var _this = this;
       this.$swal
         .fire({
           title: "Masukan No Surat",
@@ -415,7 +416,9 @@ export default {
                     "Berhasil Mengirim Email",
                     "success"
                   );
-                  this.getData();
+                  setTimeout(function() {
+                    _this.getData();
+                  }, 3000);
                 },
                 error_bro => {
                   this.$swal.showValidationMessage(`Ada Kesalahan Pada Server`);
@@ -427,8 +430,11 @@ export default {
         })
         .then(result => {
           if (result.value) {
+            _this.getData();
+            setTimeout(function() {
+              _this.getData();
+            }, 3000);
             this.$swal.fire("Berhasil", "Berhasil Mengirim Email", "success");
-            this.getData();
           }
         });
     },

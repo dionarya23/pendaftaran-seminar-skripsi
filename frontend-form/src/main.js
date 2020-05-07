@@ -10,12 +10,12 @@ import firebase from 'firebase';
 Vue.use(VueSweetalert2);
 Vue.use(VueResource);
 
-var firebaseConfig = process.env.FirebaseConfig;
+var firebaseConfig = process.env.NODE_ENV;
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
 firebase.analytics();
 
-Vue.http.options.root = "https://https://pendaftaran-api.herokuapp.com//api/v1/";
+Vue.http.options.root = process.env.BASEURL;
 Vue.config.productionTip = false;
 
 /* eslint-disable no-new */
